@@ -1,0 +1,13 @@
+thorntail:
+  datasources:
+    data-sources:
+      postgresql-phonebook:
+        driver-name: postgresql
+        connection-url: jdbc:postgresql://localhost:5432/phonebook
+        user-name: miroque
+        password: developer
+    jdbc-drivers:
+      postgresql:
+        driver-class-name: org.postgresql.Driver
+        xa-datasource-name: org.postgresql.xa.PGXADataSource
+        driver-module-name: org.postgresql
