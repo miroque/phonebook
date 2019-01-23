@@ -3,6 +3,8 @@ package ru.miroque.phonebook.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -26,6 +28,7 @@ public class Phone {
 	@Getter
 	@Setter
 	@EqualsAndHashCode.Include
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
 	@Column
@@ -38,8 +41,10 @@ public class Phone {
 	@Setter
 	private String inner;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "division_fkey")
-	private Division division;
+/*	@ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "division_fkey")
+	@Getter
+	@Setter
+	private Division division;*/
 
 }
