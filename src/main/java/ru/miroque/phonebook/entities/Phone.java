@@ -39,12 +39,11 @@ public class Phone {
 	@Column
 	@Getter
 	@Setter
-	private String inner;
+	private String code;
 	
-/*	@ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "division_fkey")
+	@ManyToOne(fetch = FetchType.LAZY)
 	@Getter
 	@Setter
-	private Division division;*/
+	private Division division;
 
 }
