@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -28,7 +29,9 @@ public class Phone {
 	@Getter
 	@Setter
 	@EqualsAndHashCode.Include
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_phone")
+	@SequenceGenerator(name = "seq_phone", sequenceName = "seq_phone")
+	
 	private Integer id;
 
 	@Column
