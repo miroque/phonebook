@@ -1,12 +1,6 @@
 thorntail:
-#  network:
-  socket-binding-groups:
-    standard-sockets:
-      http:
-        port: 8088
-#  swarm:
-#    http:
-#      port: 8085
+  http:
+    port: 8080
   datasources:
     data-sources:
       postgresql-phonebook:
