@@ -30,7 +30,6 @@ public class Phone {
 	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_phone")
 	@SequenceGenerator(name = "seq_phone", sequenceName = "seq_phone")
-	
 	private Integer id;
 
 	@Column

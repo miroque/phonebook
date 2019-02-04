@@ -28,3 +28,7 @@ hs_err_pid*
 .settings/
 .metadata/
 *.swp
+/.apt_generated/
+/.apt_generated_tests/
+.factorypath
+.dbeaver-data-sources.xml
