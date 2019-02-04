@@ -1,5 +1,7 @@
 package ru.miroque.phonebook.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +21,9 @@ import lombok.ToString;
 @Entity
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
-public class Division {
+public class Division implements Serializable{
+	private static final long serialVersionUID = -4782524280148652383L;
+
 	@Id
 	@Getter
 	@Setter
