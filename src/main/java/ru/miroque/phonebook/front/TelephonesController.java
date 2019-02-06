@@ -1,31 +1,47 @@
 package ru.miroque.phonebook.front;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.EntityManager;
 
+import org.jboss.logging.Logger;
+import org.primefaces.event.RowEditEvent;
+
+import ru.miroque.phonebook.dao.PhoneDao;
 import ru.miroque.phonebook.entities.Phone;
 
 @Named
 @RequestScoped
-public class TelephonesController {
+public class TelephonesController implements Serializable {
+	private static final long serialVersionUID = 1391280938192540190L;
+	
 	@Inject
-	private EntityManager em;
+	private PhoneDao daoPhone;
 
 	private List<Phone> phones;
 
 	@PostConstruct
 	private void pConstruct() {
-		phones = em.createQuery("From Phone p", Phone.class).getResultList();
+		phones = daoPhone.getAll();
 	}
 
 	public List<Phone> getPhones() {
-		System.out.println("getting phones");
 		return phones;
 	}
 
+	public void onRowEdit(RowEditEvent event) {
+		System.out.println("onRowEdit: " + ((Phone) event.getObject()).getId());
+	}
+
+	public void onRowCancel(RowEditEvent event) {
+		System.out.println("onRowCancel: " +((Phone) event.getObject()).getId());
+	}
+
+	public void onAddNew() {
+	
+	}
 }

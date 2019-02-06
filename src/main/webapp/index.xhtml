@@ -15,12 +15,16 @@
 	<h:form id="form">
 		<p:growl id="msgs" showDetail="true" />
 
-		<p:dataTable id="cars1" widgetVar="cars1" var="item"
+		<p:dataTable id="phones" widgetVar="phones" var="item"
 			value="#{telephonesController.phones}" editable="true"
 			style="margin-bottom:20px">
-			<f:facet name="header">
-            Phones
-        </f:facet>
+
+			<f:facet name="header"> Phones </f:facet>
+			
+			<p:ajax event="rowEdit" listener="#{telephonesController.}"
+				update=":form:msgs" />
+			<p:ajax event="rowEditCancel" listener="#{telephonesController.onRowCancel}"
+				update=":form:msgs" />
 			<p:column headerText="Number">
 				<p:cellEditor>
 					<f:facet name="output">
@@ -50,7 +54,7 @@
 			<div class="ui-g-12">
 				<p:commandButton value="Добавить телефон"
 					styleClass="ui-priority-primary" process="@this"
-					update=":form:msgs" action="#{dtAddRowView.onAddNew()}"
+					update=":form:msgs" action="#{telephonesController.onAddNew()}"
 					oncomplete="PF('cars1').addRow();" />
 			</div>
 		</div>

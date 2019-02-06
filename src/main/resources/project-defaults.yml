@@ -8,3 +8,10 @@ thorntail:
         connection-url: jdbc:postgresql://localhost:5434/phonebook
         user-name: miroque
         password: developer
+  logging:
+    logger:
+      category: ru.miroque.phonebook
+      level: DEBUG
+    pattern-formatters:
+        LOG_FORMATTER:
+          pattern: "CUSTOM LOG FORMAT %p [%c] %s%e%n"
