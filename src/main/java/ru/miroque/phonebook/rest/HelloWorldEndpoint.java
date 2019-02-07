@@ -8,6 +8,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.jboss.logging.Logger;
+
 import ru.miroque.phonebook.dao.AccountDao;
 import ru.miroque.phonebook.dao.DivisionDao;
 import ru.miroque.phonebook.dao.PhoneDao;
@@ -28,6 +30,8 @@ public class HelloWorldEndpoint {
 	@Inject
 	private DivisionDao daoDivision;
 	
+    private Logger log = Logger.getLogger(getClass());
+	
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response doGet() {
@@ -36,6 +40,7 @@ public class HelloWorldEndpoint {
 	}
 	
 	private void initData() {
+		log.info("init DB");
 		// init Divisions
 		Division division1 = new Division();
 		division1.setName("Бухгалтерия");

@@ -21,7 +21,7 @@
 
 			<f:facet name="header"> Phones </f:facet>
 			
-			<p:ajax event="rowEdit" listener="#{telephonesController.}"
+			<p:ajax event="rowEdit" listener="#{telephonesController.onRowEdit}"
 				update=":form:msgs" />
 			<p:ajax event="rowEditCancel" listener="#{telephonesController.onRowCancel}"
 				update=":form:msgs" />
@@ -54,7 +54,7 @@
 			<div class="ui-g-12">
 				<p:commandButton value="Добавить телефон"
 					styleClass="ui-priority-primary" process="@this"
-					update=":form:msgs" action="#{telephonesController.onAddNew()}"
+					update=":form:msgs" action="#{telephonesController.onAddNew}"
 					oncomplete="PF('cars1').addRow();" />
 			</div>
 		</div>

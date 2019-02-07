@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -23,6 +25,8 @@ public class TelephonesController implements Serializable {
 	private PhoneDao daoPhone;
 
 	private List<Phone> phones;
+	
+	private Logger log = Logger.getLogger(getClass());
 
 	@PostConstruct
 	private void pConstruct() {
@@ -34,14 +38,19 @@ public class TelephonesController implements Serializable {
 	}
 
 	public void onRowEdit(RowEditEvent event) {
-		System.out.println("onRowEdit: " + ((Phone) event.getObject()).getId());
+		log.info("onRowEdit: " + ((Phone) event.getObject()).getId());
+		FacesMessage msg = new FacesMessage("onRowEdit", ((Phone) event.getObject()).getId().toString());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 
 	public void onRowCancel(RowEditEvent event) {
-		System.out.println("onRowCancel: " +((Phone) event.getObject()).getId());
+		log.info("onRowCancel: " +((Phone) event.getObject()).getId());
+		FacesMessage msg = new FacesMessage("onRowCancel", ((Phone) event.getObject()).getId().toString());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 
 	public void onAddNew() {
-	
+        FacesMessage msg = new FacesMessage("New Phone added", "so");
+        FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 }
