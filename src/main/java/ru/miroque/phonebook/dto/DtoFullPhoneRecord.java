@@ -10,17 +10,8 @@ import lombok.Data;
  */
 @Data
 public class DtoFullPhoneRecord {
-	private String fio;
-	private String number;
-	private String code;
-	private String division;
-
-	public DtoFullPhoneRecord(String fio, String number, String code, String division) {
-		super();
-		this.fio = fio;
-		this.number = number;
-		this.code = code;
-		this.division = division;
-	}
-
+	private final String fio;
+	private final String number;
+	private final String code;
+	private final String division;
 }
