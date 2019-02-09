@@ -26,6 +26,17 @@
 			<p:ajax event="rowEditCancel"
 				listener="#{telephonesController.onRowCancel}" update=":form:msgs" />
 
+			<p:column headerText="FIO">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{item.fio}" />
+					</f:facet>
+					<f:facet name="input">
+						<p:inputText value="#{item.fio}" style="width:100%"
+							label="FIO" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
 			<p:column headerText="Number">
 				<p:cellEditor>
 					<f:facet name="output">
@@ -50,7 +61,7 @@
 			<p:column headerText="Отдел">
 				<p:cellEditor>
 					<f:facet name="output">
-						<h:outputText value="#{item.division.name}" />
+						<h:outputText value="#{item.division}" />
 					</f:facet>
 					<f:facet name="input">
 						<h:selectOneMenu value="#{item.division}" style="width:100%">

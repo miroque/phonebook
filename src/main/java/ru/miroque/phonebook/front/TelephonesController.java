@@ -13,8 +13,9 @@ import javax.inject.Named;
 import org.jboss.logging.Logger;
 import org.primefaces.event.RowEditEvent;
 
-import ru.miroque.phonebook.dao.PhoneDao;
+import ru.miroque.phonebook.dto.DtoFullPhoneRecord;
 import ru.miroque.phonebook.entities.Phone;
+import ru.miroque.phonebook.services.TelephoneService;
 
 @Named
 @RequestScoped
@@ -22,18 +23,18 @@ public class TelephonesController implements Serializable {
 	private static final long serialVersionUID = 1391280938192540190L;
 	
 	@Inject
-	private PhoneDao daoPhone;
+	private TelephoneService telephoneService;
 
-	private List<Phone> phones;
+	private List<DtoFullPhoneRecord> phones;
 	
 	private Logger log = Logger.getLogger(getClass());
 
 	@PostConstruct
 	private void pConstruct() {
-		phones = daoPhone.getForView();
+		phones = telephoneService.getAllPhonesForView();
 	}
 
-	public List<Phone> getPhones() {
+	public List<DtoFullPhoneRecord> getPhones() {
 		return phones;
 	}
 
