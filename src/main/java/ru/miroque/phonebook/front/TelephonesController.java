@@ -30,7 +30,7 @@ public class TelephonesController implements Serializable {
 
 	@PostConstruct
 	private void pConstruct() {
-		phones = daoPhone.getAll();
+		phones = daoPhone.getForView();
 	}
 
 	public List<Phone> getPhones() {

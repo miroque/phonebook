@@ -20,11 +20,12 @@
 			style="margin-bottom:20px">
 
 			<f:facet name="header"> Phones </f:facet>
-			
+
 			<p:ajax event="rowEdit" listener="#{telephonesController.onRowEdit}"
 				update=":form:msgs" />
-			<p:ajax event="rowEditCancel" listener="#{telephonesController.onRowCancel}"
-				update=":form:msgs" />
+			<p:ajax event="rowEditCancel"
+				listener="#{telephonesController.onRowCancel}" update=":form:msgs" />
+
 			<p:column headerText="Number">
 				<p:cellEditor>
 					<f:facet name="output">
@@ -43,6 +44,19 @@
 					</f:facet>
 					<f:facet name="input">
 						<p:inputText value="#{item.code}" style="width:100%" label="Code" />
+					</f:facet>
+				</p:cellEditor>
+			</p:column>
+			<p:column headerText="Отдел">
+				<p:cellEditor>
+					<f:facet name="output">
+						<h:outputText value="#{item.division.name}" />
+					</f:facet>
+					<f:facet name="input">
+						<h:selectOneMenu value="#{item.division}" style="width:100%">
+							<f:selectItems value="#{dtEditView.brands}" var="unit"
+								itemLabel="#{unit.name}" itemValue="#{unit}" />
+						</h:selectOneMenu>
 					</f:facet>
 				</p:cellEditor>
 			</p:column>
