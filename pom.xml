@@ -270,6 +270,14 @@
 					<version>42.2.5</version>
 				</dependency>
 
+				<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+				<dependency>
+					<groupId>com.h2database</groupId>
+					<artifactId>h2</artifactId>
+					<scope>compile</scope>
+					<version>1.4.197</version>
+				</dependency>
+
 				<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
 				<dependency>
 					<groupId>org.primefaces</groupId>

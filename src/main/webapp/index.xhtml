@@ -78,6 +78,7 @@
 		<div class="ui-g">
 			<div class="ui-g-12">
 				<p:commandButton value="Добавить телефон"
+					disabled="true"
 					styleClass="ui-priority-primary" process="@this"
 					update=":form:msgs" action="#{telephonesController.onAddNew}"
 					oncomplete="PF('cars1').addRow();" />
