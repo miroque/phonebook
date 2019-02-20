@@ -38,8 +38,15 @@
 				</dependencies>
 			</dependencyManagement>
 			<dependencies>
+			<!-- ******* Java EE 8 ******* -->
+				<dependency>
+					<groupId>javax</groupId>
+					<artifactId>javaee-api</artifactId>
+					<version>8.0</version>
+					<scope>provided</scope>
+				</dependency>
 				<!-- deps in Wildfly -->
-
+<!-- 
 				<dependency>
 					<groupId>org.jboss.spec.javax.ws.rs</groupId>
 					<artifactId>jboss-jaxrs-api_2.1_spec</artifactId>
@@ -65,9 +72,9 @@
 					<groupId>org.hibernate</groupId>
 					<artifactId>hibernate-core</artifactId>
 					<scope>provided</scope>
-				</dependency>
+				</dependency> -->
 				<!-- Transactions -->
-				<dependency>
+				<!-- <dependency>
 					<groupId>org.jboss.spec.javax.transaction</groupId>
 					<artifactId>jboss-transaction-api_1.2_spec</artifactId>
 					<scope>provided</scope>
@@ -81,13 +88,13 @@
 					<groupId>org.jboss.spec.javax.servlet</groupId>
 					<artifactId>jboss-servlet-api_4.0_spec</artifactId>
 					<scope>provided</scope>
-				</dependency>
+				</dependency> -->
 				<!-- JSF for future learning -->
-				<dependency>
+				<!-- <dependency>
 					<groupId>org.jboss.spec.javax.faces</groupId>
 					<artifactId>jboss-jsf-api_2.3_spec</artifactId>
 					<scope>provided</scope>
-				</dependency>
+				</dependency> -->
 				<!-- PRIMEFACES -->
 				<dependency>
 					<groupId>org.primefaces</groupId>
@@ -96,7 +103,7 @@
 				</dependency>
 				<!-- JSF Util Library here for working with images -->
 				<!-- https://mvnrepository.com/artifact/org.omnifaces/omnifaces -->
-				<dependency>
+				<!-- <dependency>
 					<groupId>org.omnifaces</groupId>
 					<artifactId>omnifaces</artifactId>
 					<version>2.6.7</version>
@@ -105,7 +112,7 @@
 					<groupId>org.omnifaces</groupId>
 					<artifactId>omniutils</artifactId>
 					<version>0.6</version>
-				</dependency>
+				</dependency> -->
 				<!-- Tests Unit and Mock -->
 				<dependency>
 					<groupId>org.mockito</groupId>
